@@ -16,7 +16,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    compile("io.krews", "krews", "0.5.18")
+    compile("io.krews", "krews", "0.6.0")
 }
 
 tasks.withType<KotlinCompile> {
