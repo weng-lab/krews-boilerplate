@@ -16,9 +16,5 @@ val sampleWorkflow = workflow("sample-workflow") {
     val base64 = base64Task(base64In)
 
     val zipIn = base64.outputPub.map { ZipInput(it.base64File) }
-    zipTask(zipIn)
-
-
-    val x = listOf<Base64Input>()
-
+    val zip = zipTask(zipIn)
 }
