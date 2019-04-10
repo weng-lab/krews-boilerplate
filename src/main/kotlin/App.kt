@@ -13,8 +13,8 @@ val sampleWorkflow = workflow("sample-workflow") {
     val params = params<SampleParams>()
 
     val base64In = (1..params.rangeMax).toFlux().map { Base64Input(it) }
-    val base64 = base64Task(base64In)
+    val base64Out = base64Task(base64In)
 
-    val zipIn = base64.outputPub.map { ZipInput(it.base64File) }
-    val zip = zipTask(zipIn)
+    val zipIn = base64Out.map { ZipInput(it.base64File) }
+    zipTask(zipIn)
 }
